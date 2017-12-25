@@ -1,7 +1,7 @@
 # Requires:
 
-- Ansible
-- Terraform
+- [Ansible](https://www.ansible.com/)
+- [Terraform](https://www.terraform.io/)
 
 ## Provision infrastructure
 
@@ -13,7 +13,9 @@ terraform apply
 
 ## Configure OpenVPN
 
-Copy `roles/ca/files/pki_vars.sample` to `roles/ca/files/pki_vars`. Update `pki_vars` with your desired values for your Certificate Authority.
+Copy `roles/ca/files/pki_vars.sample` to `roles/ca/files/pki_vars`.
+
+Update `pki_vars` with your desired values for your CA.
 
 Next, run `ansible-playbook` to configure OpenVPN on your ec2 instance.
 
@@ -31,12 +33,14 @@ ansible-playbook \
 
 ## Provision keys and certs for more clients
 
+```
 ansible-playbook \
     -e 'build_clients=true' \
     -e '{"client_names": ["another_client", "and_another"]}' \
     -i "1.1.2.2," \
     -u ec2-user \
     provision.yml
+```
 
 ## More information
 
