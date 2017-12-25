@@ -42,6 +42,8 @@ ansible-playbook \
     provision.yml
 ```
 
+Keys, certs, etc. will be placed in `lib/EasyRSA-2.2.2/keys/`
+
 ## More information
 
 Based on: [How to make your own free VPN with Amazon Web Services](https://www.comparitech.com/blog/vpn-privacy/how-to-make-your-own-free-vpn-using-amazon-web-services/)
