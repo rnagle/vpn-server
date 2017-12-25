@@ -7,6 +7,9 @@
     name: openvpn
     state: present
 
+- name: install security updates
+  shell: yum update-minimal --security -y
+
 #
 # iptable configuration
 #
