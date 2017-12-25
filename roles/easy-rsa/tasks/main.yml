@@ -1,0 +1,15 @@
+---
+- name: ensure lib dir
+  file:
+    state: directory
+    mode: 0755
+    dest: ./lib
+
+- name: download easy-rsa
+  get_url:
+    url: "https://github.com/OpenVPN/easy-rsa/releases/download/2.2.2/EasyRSA-2.2.2.tgz"
+    dest: ./lib/easy-rsa.tgz
+
+- name: unarchive easy-rsa
+  shell: |
+    cd lib && tar -xzvf easy-rsa.tgz

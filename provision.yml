@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - include_role:
+        name: easy-rsa
+
+    - include_role:
+        name: ca
+      when: build_ca is not undefined
+
+    - include_role:
+        name: clients
+      when: build_clients is not undefined
+
+- hosts: all
+  become: yes
+  roles:
+    - openvpn

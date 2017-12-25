@@ -1,0 +1,6 @@
+roles/ca/files/pki_vars
+terraform/*.tfstate
+terraform/*.backup
+terraform/*.tfvars
+*.retry
+lib

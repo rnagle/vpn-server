@@ -1,0 +1,9 @@
+---
+# TODO: allow user to set pass phrases
+- name: build client keys
+  shell: |
+    source ./vars
+    ./build-key --batch {{ item }}
+  args:
+    chdir: lib/EasyRSA-2.2.2
+  with_items: "{{ client_names }}"

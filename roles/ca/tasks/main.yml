@@ -1,0 +1,20 @@
+---
+- name: copy pki_vars
+  copy:
+    src: files/pki_vars
+    dest: lib/EasyRSA-2.2.2/vars
+
+- name: create ca certs and keys
+  shell: |
+    source ./vars
+    ./clean-all
+    ./build-ca --batch
+    ./build-key-server --batch server
+    ./build-dh 2048
+  args:
+    chdir: lib/EasyRSA-2.2.2
+
+- name: create pfs key
+  shell: openvpn --genkey --secret pfs.key
+  args:
+    chdir: lib/EasyRSA-2.2.2/keys
