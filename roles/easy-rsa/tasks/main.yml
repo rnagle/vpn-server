@@ -13,3 +13,8 @@
 - name: unarchive easy-rsa
   shell: |
     cd lib && tar -xzvf easy-rsa.tgz
+
+- name: copy pki_vars
+  copy:
+    src: files/pki_vars
+    dest: lib/EasyRSA-2.2.2/vars

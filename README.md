@@ -13,7 +13,7 @@ terraform apply
 
 ## Configure OpenVPN
 
-Copy `roles/ca/files/pki_vars.sample` to `roles/ca/files/pki_vars`.
+Copy `roles/easy-rsa/files/pki_vars.sample` to `roles/easy-rsa/files/pki_vars`.
 
 Update `pki_vars` with your desired values for your CA.
 

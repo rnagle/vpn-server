@@ -1,4 +1,4 @@
-roles/ca/files/pki_vars
+roles/easy-rsa/files/pki_vars
 terraform/*.tfstate
 terraform/*.backup
 terraform/*.tfvars

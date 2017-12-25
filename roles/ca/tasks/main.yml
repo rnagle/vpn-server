@@ -1,9 +1,4 @@
 ---
-- name: copy pki_vars
-  copy:
-    src: files/pki_vars
-    dest: lib/EasyRSA-2.2.2/vars
-
 - name: create ca certs and keys
   shell: |
     source ./vars

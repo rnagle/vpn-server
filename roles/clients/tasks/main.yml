@@ -7,3 +7,9 @@
   args:
     chdir: lib/EasyRSA-2.2.2
   with_items: "{{ client_names }}"
+
+- name: build ovpn files
+  template:
+    src: ovpn.j2
+    dest: lib/EasyRSA-2.2.2/keys/{{ item }}.ovpn
+  with_items: "{{ client_names }}"
