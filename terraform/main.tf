@@ -57,7 +57,7 @@ data "aws_ami" "aws-linux" {
 
 resource "aws_instance" "vpn" {
   ami                         = "${data.aws_ami.aws-linux.id}"
-  instance_type               = "t2.micro"
+  instance_type               = "t2.nano"
   key_name                    = "${var.key_name}"
   associate_public_ip_address = true
   security_groups             = ["${aws_security_group.vpn.name}", "${aws_security_group.ssh.name}"]
