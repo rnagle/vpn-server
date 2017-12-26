@@ -1,15 +1,23 @@
-# Requires:
+# vpn-server
+
+## Requires:
 
 - [Ansible](https://www.ansible.com/)
 - [Terraform](https://www.terraform.io/)
+- [openvpn](https://github.com/OpenVPN/openvpn)
+- An AWS account
 
 ## Provision infrastructure
+
+The included terraform configuration brings up a `t2.nano` instance to run the VPN server.
 
 ```
 cd terraform
 terraform plan
 terraform apply
 ```
+
+Note the IP address in the output from `terraform apply`. We'll need it for the steps that follow.
 
 ## Configure OpenVPN
 
